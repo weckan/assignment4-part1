@@ -24,7 +24,7 @@ if($_SERVER['REQUEST_METHOD'] === 'GET') {
     $input = null;
 
     # cycle through input and encode values into an array
-    foreach($_REQUEST as $key => $value) {
+    foreach($_GET as $key => $value) {
 
         $input[$key] = $value;
     }
@@ -35,7 +35,7 @@ else if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $input = null;
 
     # cycle through input and encode values into an array
-    foreach($_REQUEST as $key => $value) {
+    foreach($_POST as $key => $value) {
 
         $input[$key] = $value;
     }
