@@ -1,0 +1,3 @@
+table { border: solid medium; border-collapse: collapse; font-size: large;}
+tr {border: solid thin; }
+td {border: solid thin; border-color: black; font-size: large;}
