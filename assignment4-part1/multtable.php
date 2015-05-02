@@ -14,24 +14,35 @@ ini_set('display_errors',1);
 $error_check = 0;
 $arg_check = 0;
 
+#function isfloat($f) return ($f == (string)(float)$f);
+
+
+
 foreach($_GET as $key => $value) {
     if(!is_numeric($value)) {
         echo "$key must be an integer <br>";
         $error_check = 1;
     }
-    if($key == "min-multiplicand")
+    # Credit to user 'Mitch' for regular expression search, given on
+    # http://php.net/manual/en/function.is-float.php
+    $regex = "/^[+-]?(\d*\.\d+([eE]?[+-]?\d+)?|\d+[eE][+-]?\d+)$/";
+    if (preg_match ($regex, $value)) {
+        echo "$key must be an integer <br>";
+        $error_check = 1;
+    }
+    if($key == "min-multiplicand" && $value >= 0)
         $arg_check++;
-    if($key == "max-multiplicand")
+    if($key == "max-multiplicand" && $value >= 0)
         $arg_check++;
-    if($key == "min-multiplier")
+    if($key == "min-multiplier" && $value >= 0)
         $arg_check++;
-    if($key == "max-multiplier")
+    if($key == "max-multiplier" && $value >= 0)
         $arg_check++;
 }
 
 if ($arg_check != 4) {
-    echo 'Please provide arguments for min-multiplicand, max-multiplicand,
-        min-multiplier, and max-multiplier.';
+    echo 'Please provide positive arguments for min-multiplicand, 
+        max-multiplicand, min-multiplier, and max-multiplier.';
     $error_check = 1;
 }
 if ($arg_check == 4) {

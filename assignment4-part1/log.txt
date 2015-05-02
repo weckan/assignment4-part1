@@ -10,3 +10,8 @@ Start: Fri, 1 May 2015 14:30:00 -0500
 End: Fri, 1 May 2015 14:55:16 -0500 
 Tasks: Finishing touches on loopback.php
 
+Start: Fri, 1 May 2015 20:00:00 -0500
+End: Fri, 1 May 2015 21:46:41 -0500 
+Tasks: Basic functionality implemented for [login/content1/content2].php, will
+change username if double login, error-checked multtable
+

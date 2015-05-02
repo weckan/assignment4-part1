@@ -6,7 +6,7 @@ ini_set('display_errors',1);
 <html>
 <header>
     <meta charset="UTF-8">
-    <title>multtable</title>
+    <title>loopback</title>
     <link rel="stylesheet" href="style.css">
 </header>
 <body>
